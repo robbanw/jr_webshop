@@ -31,5 +31,4 @@ dist
 
 # Semantic stuff that is unnecessary to version
 semantic/dist
-semantic/tasks
 semantic/gulpfile.js
