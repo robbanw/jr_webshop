@@ -1,0 +1,22 @@
+extends ./layout.jade
+
+block.header
+  script(src="HomeController.js")
+  link(rel="stylesheet" type="text/css" href="/styles/animation.css")
+block.content
+  div.ui.container
+    div.ui.three.column.grid
+      div.row
+        div.three.wide.centered.column
+          h1.ui.center.aligned.header Some content!
+      div.row
+        div.column
+          h3 This is a content slot!
+          p Lorem ipsum dolor sit amet, no sed audiam habemus aliquando, sadipscing vituperatoribus has te. Facete fabellas at est, hinc labores pri ut. Vel ut facete feugiat. No vim vivendo petentium gloriatur. Libris lobortis at usu.
+        div.column
+          h3 This is also a content slot!
+          div.ui.image
+            img(src="http://lorempixel.com/400/200/")
+        div.column
+          h3 This is yet another content slot!
+          div.animation

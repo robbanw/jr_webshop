@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+  head
+    title J & R Web Shop
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js")
+    script(src="/semantic.min.js")
+    link(rel="stylesheet" type="text/css" href="/styles/semantic.min.css")
+    block.header
+  body
+    div.main.nav
+      include ./menu/menu.jade
+    div.pusher
+      div.full.height(style="min-height: 1000px")
+        div.main.container
+          block.content
+      div.ui.black.inverted.vertical.footer.segment
+        div.ui.center.aligned.container
+          p J & R Web Shop </br> ALL RIGHTS RESERVED

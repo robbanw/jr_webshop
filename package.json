@@ -1,0 +1,25 @@
+{
+  "name": "jr_webshop",
+  "version": "0.0.1",
+  "description": "Testing out frontend tools",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robbanw/jr_webshop"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.9.6",
+    "gulp": "^3.9.0",
+    "gulp-jade": "0.10.0",
+    "gulp-stylus": "^2.1.0",
+    "gulp-less": "^3.0.3",
+    "gulp-filter": "^3.0.1",
+    "gulp-concat": "^2.6.0",
+    "del": "^2.0.2",
+    "semantic-ui": "^2.1.4"
+  }
+}
