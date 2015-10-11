@@ -9,14 +9,14 @@ Before running, you must install and configure the following one-time dependenci
 * [gulp.js](http://gulpjs.com/) - use the terminal command below
 ```bash
 $ npm install -g gulp
-$ gulp build-ui
 ```
 
 Once the dependencies have been installed, enter the following in the terminal:
 ```bash
-$ git clone git@github.com:robbanw/hateoas-explorer.git
-$ cd hateoas-explorer
+$ git clone git@github.com:robbanw/jr_webshop.git
+$ cd jr_webshop
 $ npm install
+$ gulp build-ui
 ```
 
 
