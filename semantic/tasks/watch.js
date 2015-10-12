@@ -81,7 +81,7 @@ module.exports = function(callback) {
       source.definitions   + '/**/*.less',
       source.site          + '/**/*.{overrides,variables}',
       source.themes        + '/**/*.{overrides,variables}'
-    ], function(file) {
+    ], {interval: 1000, debounceDelay: 500,  mode: 'poll'}, function(file) {
 
       var
         lessPath,
@@ -191,7 +191,7 @@ module.exports = function(callback) {
   gulp
     .watch([
       source.definitions   + '/**/*.js'
-    ], function(file) {
+    ], {interval: 1000, debounceDelay: 500,  mode: 'poll'}, function(file) {
       gulp.src(file.path)
         .pipe(plumber())
         .pipe(replace(comments.license.in, comments.license.out))
@@ -218,7 +218,7 @@ module.exports = function(callback) {
   gulp
     .watch([
       source.themes   + '/**/assets/**/*.*'
-    ], function(file) {
+    ], {interval: 1000, debounceDelay: 500,  mode: 'poll'}, function(file) {
       // copy assets
       gulp.src(file.path, { base: source.themes })
         .pipe(gulpif(config.hasPermission, chmod(config.permission)))

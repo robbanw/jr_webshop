@@ -57,10 +57,10 @@ gulp.task('serve', ['build'], function(done){
 		}
 	});
 
-	gulp.watch(['./src/styles/**/*.{styl,css}', './semantic/dist/semantic.min.css'], ['styles']);
-	gulp.watch('./src/**/*.jade', ['templates']);
-	gulp.watch(['./src/**/*.js', './semantic/dist/semantic.min.js'], ['scripts']);
-  done();
+	gulp.watch(['./src/styles/**/*.{styl,css}', './semantic/dist/semantic.min.css'], {interval: 1000, debounceDelay: 500,  mode: 'poll'}, ['styles']);
+	gulp.watch('./src/**/*.jade', {interval: 1000, debounceDelay: 500,  mode: 'poll'}, ['templates']);
+	gulp.watch(['./src/**/*.js', './semantic/dist/semantic.min.js'], {interval: 1000, debounceDelay: 500,  mode: 'poll'}, ['scripts']);
+  	done();
 });
 
 gulp.task('build', ['styles', 'templates', 'scripts', 'themes'])
