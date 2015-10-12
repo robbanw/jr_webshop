@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var runSequence = require('run-sequence');
 var del = require('del');
 var jade = require('gulp-jade');
 var stylus = require('gulp-stylus');
@@ -31,7 +32,7 @@ gulp.task('styles', function(){
       .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('themes', ['styles'], function(){
+gulp.task('themes', function(){
 	return gulp.src('./semantic/dist/themes/**/*.*')
 		.pipe(gulp.dest('./dist/styles/themes'));
 });
@@ -43,7 +44,7 @@ gulp.task('templates', function(){
 		.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('scripts', ['templates'], function(){
+gulp.task('scripts', function(){
 	return gulp.src(['./src/**/*.js', './semantic/dist/semantic.min.js'])
 		.pipe(gulp.dest('./dist'))
 		.pipe(browserSync.reload({stream: true}));
@@ -63,6 +64,8 @@ gulp.task('serve', ['build'], function(done){
   	done();
 });
 
-gulp.task('build', ['styles', 'templates', 'scripts', 'themes'])
+gulp.task('build', function(done){
+	runSequence('clean', 'styles', 'templates', 'scripts', 'themes', done);
+});
 
 gulp.task('default', ['build', 'serve', 'watch-ui']);
