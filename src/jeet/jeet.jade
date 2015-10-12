@@ -1,0 +1,20 @@
+extends ../layout.jade
+
+block.header
+  script(src="JeetController.js")
+  link(rel="stylesheet" type="text/css" href="/styles/animation.css")
+  link(rel="stylesheet" type="text/css" href="/styles/main.css")
+block.content
+  div.centered.content
+    div.dummy.header
+      h1.ui.center.aligned.header Some Jeet content!
+    div.dummy.component
+      h3 This is a content slot!
+      p Lorem ipsum dolor sit amet, no sed audiam habemus aliquando, sadipscing vituperatoribus has te. Facete fabellas at est, hinc labores pri ut. Vel ut facete feugiat. No vim vivendo petentium gloriatur. Libris lobortis at usu.
+    div.dummy.component
+      h3 This is also a content slot!
+      div.ui.image
+        img(src="http://lorempixel.com/400/200/")
+    div.dummy.component
+      h3 This is yet another content slot!
+      div.animation
