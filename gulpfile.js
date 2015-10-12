@@ -18,7 +18,7 @@ gulp.task('clean', function(done){
   done();
 });
 
-gulp.task('styles', ['clean'], function(){
+gulp.task('styles', function(){
   var filter = gulpFilter('**/*.styl', {restore: true});
 
   return gulp.src(['./src/styles/stylus/**.styl', './src/styles/css/**.css', './semantic/dist/semantic.min.css'])
@@ -29,25 +29,25 @@ gulp.task('styles', ['clean'], function(){
       .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('themes', ['clean', 'styles'], function(){
+gulp.task('themes', ['styles'], function(){
 	return gulp.src('./semantic/dist/themes/**/*.*')
 		.pipe(gulp.dest('./dist/styles/themes'));
 });
 
-gulp.task('templates', ['clean'], function(){
+gulp.task('templates', function(){
 	return gulp.src('./src/**/*.jade')
 		.pipe(jade())
 		.pipe(gulp.dest('./dist'))
 		.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('scripts', ['clean', 'templates'], function(){
+gulp.task('scripts', ['templates'], function(){
 	return gulp.src(['./src/**/*.js', './semantic/dist/semantic.min.js'])
 		.pipe(gulp.dest('./dist'))
 		.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('serve', ['clean', 'build'], function(done){
+gulp.task('serve', ['build'], function(done){
 
 	browserSync.init({
 		server: {
