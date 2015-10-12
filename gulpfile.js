@@ -4,6 +4,7 @@ var jade = require('gulp-jade');
 var stylus = require('gulp-stylus');
 var gulpFilter = require('gulp-filter');
 var jeet = require("jeet");
+var rupture = require("rupture");
 var browserSync = require('browser-sync').create();
 
 var buildSemantic = require('./semantic/tasks/build');
@@ -24,7 +25,7 @@ gulp.task('styles', function(){
 
   return gulp.src(['./src/styles/stylus/**.styl', './src/styles/css/**.css', './semantic/dist/semantic.min.css'])
       .pipe(filter)
-      .pipe(stylus({use: [jeet()]}))
+      .pipe(stylus({use: [jeet(), rupture()]}))
       .pipe(filter.restore)
       .pipe(gulp.dest('./dist/styles'))
       .pipe(browserSync.reload({stream: true}));

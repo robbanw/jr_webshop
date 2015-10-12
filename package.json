@@ -21,6 +21,7 @@
     "gulp-concat": "^2.6.0",
     "del": "^2.0.2",
     "jeet": "^6.1.2",
+    "rupture": "0.6.1",
     "semantic-ui": "^2.1.4"
   }
 }
