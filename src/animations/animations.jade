@@ -1,0 +1,60 @@
+extends ../layout.jade
+
+block.header
+  script(src="AnimationsController.js")
+  link(rel="stylesheet" type="text/css" href="/styles/myanimations.css")
+block.content
+  h1.ui.center.aligned.header Translations
+  div.centered.content
+    div.transcol
+      div.transup
+        i.massive.arrow.up.icon
+      h3 Up Translation
+    div.transcol
+      div.transright
+        i.massive.arrow.right.icon
+      h3 Right Translation
+    div.transcol
+      div.transdown
+        i.massive.arrow.down.icon
+      h3 Down Translation
+    div.transcol
+      div.transleft
+        i.massive.arrow.left.icon
+      h3 Left Translation
+  h1.ui.center.aligned.header Rotations
+  div.centered.content
+    div.rotationcol
+      i.massive.circle.notched.icon.rotating
+      h3 Clockwise rotation
+    div.rotationcol
+      i.massive.circle.notched.icon.counterrotating
+      h3 Counterclockwise rotation
+  h1.ui.center.aligned.header Rotations around axis
+  div.mainheading3dpadding
+  div.centered.content
+    div.rotation3dcol
+      h1.rotatingxaxis Some text!
+      h3.heading3dpadding Rotation around X-axis
+    div.rotation3dcol
+      h1.rotatingyaxis Some text!
+      h3.heading3dpadding Rotation around Y-axis
+    div.rotation3dcol
+      h1.rotatingzaxis Some text!
+      h3.heading3dpadding Rotation around Z-axis
+  h1.ui.center.aligned.header Scalings
+  div.centered.content
+    div.scalingcol
+      i.massive.square.icon.scalingwidth
+      h3 Scaling width
+    div.scalingcol
+      i.massive.square.icon.scalingheight
+      h3 Scaling height
+  h1.ui.center.aligned.header Skewings
+  div.centered.content
+    div.skewingcol
+      i.massive.square.icon.skewingx
+      h3 Horizontal skew
+    div.skewingcol
+      i.massive.square.icon.skewingy
+      h3 Vertical skew
