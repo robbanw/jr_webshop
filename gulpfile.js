@@ -27,7 +27,7 @@ gulp.task('styles', function(){
   var stylusFilter = gulpFilter('**/*.styl', {restore: true});
   var sassFilter = gulpFilter('**/*.scss', {restore: true});
 
-  return gulp.src(['./src/styles/**/*.{styl,css,scss}', './semantic/dist/semantic.min.css'])
+  return gulp.src(['./src/styles/**/*.{styl,css,sass}', './semantic/dist/semantic.min.css'])
       .pipe(stylusFilter)
       .pipe(stylus({use: [jeet(), rupture()]}))
       .pipe(stylusFilter.restore)
@@ -64,7 +64,7 @@ gulp.task('serve', ['build'], function(done){
 		}
 	});
 
-	gulp.watch(['./src/styles/**/*.{styl,css,scss}', './semantic/dist/semantic.min.css'], {interval: 1000, debounceDelay: 500,  mode: 'poll'}, ['styles']);
+	gulp.watch(['./src/styles/**/*.{styl,css,sass}', './semantic/dist/semantic.min.css'], {interval: 1000, debounceDelay: 500,  mode: 'poll'}, ['styles']);
 	gulp.watch('./src/**/*.jade', {interval: 1000, debounceDelay: 500,  mode: 'poll'}, ['templates']);
 	gulp.watch(['./src/**/*.js', './semantic/dist/semantic.min.js'], {interval: 1000, debounceDelay: 500,  mode: 'poll'}, ['scripts']);
   	done();

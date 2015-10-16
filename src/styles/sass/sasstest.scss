@@ -1,9 +1,0 @@
-@import "jeet";
-
-.jeetpadding{
-	padding-bottom: 20px;
-}
-
-.jeettestcol{
-	@include col(1/3);
-}
