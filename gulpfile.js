@@ -3,6 +3,7 @@ var runSequence = require('run-sequence');
 var del = require('del');
 var jade = require('gulp-jade');
 var stylus = require('gulp-stylus');
+var sass = require('gulp-sass');
 var gulpFilter = require('gulp-filter');
 var jeet = require("jeet");
 var rupture = require("rupture");
@@ -22,12 +23,16 @@ gulp.task('clean', function(done){
 });
 
 gulp.task('styles', function(){
-  var filter = gulpFilter('**/*.styl', {restore: true});
+  var stylusFilter = gulpFilter('**/*.styl', {restore: true});
+  var sassFilter = gulpFilter('**/*.sass', {restore: true});
 
-  return gulp.src(['./src/styles/stylus/**.styl', './src/styles/css/**.css', './semantic/dist/semantic.min.css'])
-      .pipe(filter)
+  return gulp.src(['./src/styles/**/*.{styl,css,sass}', './semantic/dist/semantic.min.css'])
+      .pipe(stylusFilter)
       .pipe(stylus({use: [jeet(), rupture()]}))
-      .pipe(filter.restore)
+      .pipe(stylusFilter.restore)
+      .pipe(sassFilter)
+      .pipe(sass())
+      .pipe(sassFilter.restore)
       .pipe(gulp.dest('./dist/styles'))
       .pipe(browserSync.reload({stream: true}));
 });
@@ -58,7 +63,7 @@ gulp.task('serve', ['build'], function(done){
 		}
 	});
 
-	gulp.watch(['./src/styles/**/*.{styl,css}', './semantic/dist/semantic.min.css'], {interval: 1000, debounceDelay: 500,  mode: 'poll'}, ['styles']);
+	gulp.watch(['./src/styles/**/*.{styl,css,sass}', './semantic/dist/semantic.min.css'], {interval: 1000, debounceDelay: 500,  mode: 'poll'}, ['styles']);
 	gulp.watch('./src/**/*.jade', {interval: 1000, debounceDelay: 500,  mode: 'poll'}, ['templates']);
 	gulp.watch(['./src/**/*.js', './semantic/dist/semantic.min.js'], {interval: 1000, debounceDelay: 500,  mode: 'poll'}, ['scripts']);
   	done();

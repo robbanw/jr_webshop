@@ -19,6 +19,7 @@
     "gulp-less": "^3.0.3",
     "gulp-filter": "^3.0.1",
     "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.0.4",
     "del": "^2.0.2",
     "jeet": "^6.1.2",
     "run-sequence": "^1.1.4",

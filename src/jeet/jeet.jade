@@ -2,10 +2,11 @@ extends ../layout.jade
 
 block.header
   script(src="JeetController.js")
-  link(rel="stylesheet" type="text/css" href="/styles/animation.css")
+  link(rel="stylesheet" type="text/css" href="/styles/css/animation.css")
+  link(rel="stylesheet" type="text/css" href="/styles/sass/sasstest.css")
 block.content
   div.centered.content
-    div.dummy.header
+    div.dummy.header.jeetpadding
       h1.ui.center.aligned.header Some Jeet content!
     div.dummy.component
       h3 This is a content slot!
