@@ -25,7 +25,7 @@ gulp.task('clean', function(done){
 
 gulp.task('styles', function(){
   var stylusFilter = gulpFilter('**/*.styl', {restore: true});
-  var sassFilter = gulpFilter('**/*.scss', {restore: true});
+  var sassFilter = gulpFilter('**/*.sass', {restore: true});
 
   return gulp.src(['./src/styles/**/*.{styl,css,sass}', './semantic/dist/semantic.min.css'])
       .pipe(stylusFilter)
